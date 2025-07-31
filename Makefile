@@ -1,8 +1,8 @@
 # Makefile for Snake Console Game
 
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Iinclude
-LDFLAGS = -lSDL2
+CXXFLAGS = -std=c++17 -Wall -Iinclude -IC:\Users\khatc\scoop\apps\sdl2\2.32.8\include
+LDFLAGS = -LC:\Users\khatc\scoop\apps\sdl2\2.32.8\lib -lSDL2 -mconsole
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -10,7 +10,7 @@ BIN_DIR = bin
 
 SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
-TARGET = $(BIN_DIR)/SnakeGame
+TARGET = $(BIN_DIR)/SnakeGame.exe
 
 all: $(TARGET)
 
